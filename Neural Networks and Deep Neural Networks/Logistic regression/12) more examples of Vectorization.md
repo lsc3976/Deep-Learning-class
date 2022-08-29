@@ -37,7 +37,7 @@ for i ...
 ### ex2)
 
 
-<img src="/image/003.png"><img src="/image/004.png"> <br>
+<img src="/Neural Networks and Deep Neural Networks/Logistic regression/image/003.png"><img src="/Neural Networks and Deep Neural Networks/Logistic regression/image/004.png"> <br>
 
 벡터 v가 있고 벡터 v의 모든 원소에 exponential operation을 하고싶을때 아래와같이 코딩할수있다. <br>
 
@@ -75,7 +75,7 @@ vectorization 연산은 단순히 코드만 줄어드는것이아니라 <br>
 ## 2. 로지스틱 회귀에서의 Vectorization
 
 <br>
-<img src="/image/011.png"> <br>
+<img src="/Neural Networks and Deep Neural Networks/Logistic regression/image/011.png"> <br>
 
 
 
@@ -84,12 +84,12 @@ vectorization 연산은 단순히 코드만 줄어드는것이아니라 <br>
 두번째 for 문을 없애기 위해서는 먼저 $dw_1 , dw_2$등을 0으로 초기화하는 대신 하나의 $dw$ 벡터로 만든다. <br>
 <br>
 
-<img src="/image/008.png"> <br>
+<img src="/Neural Networks and Deep Neural Networks/Logistic regression/image/008.png"> <br>
 
 $dw$를 np.zeros((n_x,1))로 지정하여 n_x차원의 벡터로 만든다. <br>
 그러면 아래 for문을 쓰는 대신 vectorization연산인 $dw$ += $x^{i}dz^{i}$로 바꿀수있다. <br><br>
 
-<img src="/image/010.png"> <br>
+<img src="/Neural Networks and Deep Neural Networks/Logistic regression/image/010.png"> <br>
 
 그리고 이 부분 또한 $dw$ /= $m$ ( $dw$ 전체 Gradient 벡터를 $m$ (트레이닝세트)으로 나눈 평균)을 쓸 수있다. <br>
 
