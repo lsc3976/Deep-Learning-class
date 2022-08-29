@@ -38,10 +38,10 @@ z = np.dot(w^T,x)+b #파이썬 명령어 np.dot(w,x)를 사용한다
 
 <br>
 
-<img src="/image/005.png"><br>
+<img src="/Neural Networks and Deep Neural Networks/Logistic regression/image/005.png"><br>
 figure1) for문을 사용한 계산
 
-<img src="/image/006.png"> <br>
+<img src="/Neural Networks and Deep Neural Networks/Logistic regression/image/006.png"> <br>
 figure2) 벡터화를 사용한 계산 <br><br>
 
 
