@@ -17,13 +17,13 @@
 __컴파일 언어__ 
 
 1. 소스 코드 전체를 실행가능한 target CPU의 기계어로 컴파일 한다.
-2. 링커는 필요한 라이브러리를 가져오고 여러개의 목적 파일을 묶어 실행 파일을 생성한다.
+2. 링커는 필요한 라이브러리를 가져오고 여러개의 Object 파일을 묶어 실행 파일을 생성한다.
 3. 프로그램을 실행하고 데이터를 입력하면 결과 값을 도출한다.
 
 
 __인터프리터 언어__
 
-1. 소스코드를  중간 코드(intermediate code)/바이트 코드(byte code)로 변환한다.
+1. 소스코드를 중간 코드(intermediate code)/바이트 코드(byte code)로 변환한다.
 2. 이 바이트 코드를 가상머신 소프트웨어로 각 행마다 실행할 때 interpret한다.
 
 ![image1.jpg](https://velog.velcdn.com/images%2Fandthensome%2Fpost%2Fbdd46076-fd22-4911-8ca1-361244b1dbd1%2FCompilervrsinterpreter.jpg)
@@ -34,7 +34,7 @@ __인터프리터 언어__
 | 컴파일러 방식 | 인터프리터 방식 |
 |----|----|
 | 프로그램 전체 번역 | 실행하는 행 단위 번역 |
-| 목적 프로그램 생성 메모리사용 | 실행 결과만을 표시 |
+| object프로그램 생성 메모리사용 | 실행 결과만을 표시 |
 | 실행 속도 빠름 | 실행 속도 느림|
 | 프로그램 일부 수정시 전체 컴파일 | 큰 기억 장치가 필요없고 실행이 간단함 |
 
@@ -128,14 +128,17 @@ CPU의 덧셈 연산은 2개의 피연산자를 다루므로 20 + 7 를 계산�
 
 현대의 많은 사람들이 소스 코드 작성의 편의성과 상황에 구애받지않고 <br>
 범용성높은 프로그래밍환경을 위해 가상머신을 활용하는 인터프리터 언어를 사용한다. <br>
-사실 연구 [논문](https://www.usenix.org/legacy/events/vee05/full_papers/p153-yunhe.pdf)에 따르면, 레지스터 기반의 VM이 스택 기반 VM보다 명령어 수는 47% 적지만 명령어 사이즈는 25% 크다고 한다. <br>
+사실 [논문](https://www.usenix.org/legacy/events/vee05/full_papers/p153-yunhe.pdf)(Virtual Machine Showdown: Stack Versus Registers)에 따르면, <br>
+레지스터 기반의 VM이 스택 기반 VM보다 명령어 사이즈는 25% 크지만 명령어 수는 47% 적다고 한다. <br>
 더 적은 명령어를 가져옴으로써 실제 컴퓨터 부하를 줄일수 있다면 <br>
 코드 사이즈를 조금 늘리더라도 명령어를 줄이는 것이 더 효율적이라고 할수있겠다. <br>
 
-그럼에도 스택 기반의 VM을 사용하는 이유는 레지스터 기반 VM보다 하드웨어(레지스터 개수,사이즈, CPU) 에 적게 의존하기 때문이다. <br>
+그럼에도 스택 기반의 VM을 사용하는 이유는 레지스터 기반 VM보다 하드웨어(레지스터 개수,사이즈,CPU)에 적게 의존하기 때문이다. <br>
 파이썬 또한 스택을 기반으로 연산을 수행하는 스택 가상머신을 채택함으로써 가장 높은 프로그래밍 언어 점유율을 보여주며 유용성을 입증하고있다. <br>
 
 
 
-출처 : https://velog.io/@andthensome/%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC-%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0#%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC--%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0 <br>
-https://www.korecmblog.com/jvm-stack-and-register/
+---
+
+
+사진 출처 : [1](https://velog.io/@andthensome/%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC-%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0#%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC--%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0) [2](https://www.korecmblog.com/jvm-stack-and-register/) <br>
