@@ -23,23 +23,23 @@ $y^{(i)}\log{\hat{y}^{(i)}}+(1-y^{(i)})log(1-\hat{y}^{(i)})$<br>
 ## 정의
 > 경사 하강법(Gradient descent)은 1차 근삿값 발견용 최적화 알고리즘이다. 기본 개념은 함수의 기울기(경사)를 구하고 경사의 반대 방향으로 계속 이동시켜 극값(local optimizer)에 이를 때까지 반복시키는 것이다. [위키백과](https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%82%AC_%ED%95%98%EA%B0%95%EB%B2%95)
 
-<p align="center"> <img src="images/경사하강법.PNG"> </p>
+<p align="center"> <img src="image/경사하강법.PNG"> </p>
 <p align="center"> Figure1. 비용함수 $J(w,b)$의 그래프 </p>
 
 [Andrew Ng](https://www.youtube.com/watch?v=uJryes5Vk1o&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=10) 
 
 <p align="center"> 곡면의 높이: 점의 $J(w,b)$값 </p> <br>
 
-<p align="center"> <img src="images/convex_f.PNG"> </p> 
+<p align="center"> <img src="image/convex_f.PNG"> </p> 
 <p align="center"> Figure2. convex function </br> </p> 
 위의 함수는 convex function(볼록한 함수)라 어디서 초기화를 해도 미분해서 거의 같은 점에 도착하게 되지만 <br> <br>
 
-<p align="center"> <img src="images/nonconvex_f1.PNG"> </p>
+<p align="center"> <img src="image/nonconvex_f1.PNG"> </p>
 <p align="center"> Figure3. non-convex function </br> </p> 
 non-convex function은 위와 같은 함수로 local optimizer이 여러개 나와서 최적의 local optimizer를 찾지 못한다.</br>
 → logistic regression에 위 Figure2.cost비용함수를 사용하는 큰 이유 중 하나이다. </br> </br>
 
-<p align="center"> <img src="images/경사하강법.PNG"> </p>
+<p align="center"> <img src="image/경사하강법.PNG"> </p>
 <p align="center"> Figure1. 비용함수 $J(w,b)$의 그래프 </br> </p> 
 
 1. 최적의 parameter $w.b$ 값을 찾기위해서는 trainning 시작할때 parameter를 특정 값으로 초기화 해야한다. <br>
@@ -57,14 +57,14 @@ logistic regression에는 거의 모든 초기화 방법을 사용할수 있는�
 * $\alpha$ : learning rate (학습률) - 반복할때 한 step의 크기를 결정
 * $\displaystyle\frac{dJ(w)}{dw}$ (미분계수) - update할때 $w$에 줄 변화량, 함수의 기울기(삼각형의 세로/가로)
 
-<p align="center"> <img src="images/Gradient1.jpg" weight=300 height=300> </p>
+<p align="center"> <img src="image/Gradient1.jpg" weight=300 height=300> </p>
 <p align="center"> Figure4. $J(w)$의 미분계수 </p> 
 
 > 이해를 돕기위해 b를 제외해서 1차원으로 가정한 그래프
 
 
 ### Case1. 미분계수 > 0 (양수)
-<p align="center"> <img src="images/Gradient2.jpg" weight=300 height=300> </p>
+<p align="center"> <img src="image/Gradient2.jpg" weight=300 height=300> </p>
 <p align="center"> Figure5. $J(w)$의 미분계수 > 0 (양수)인 경우 </p> 
 
 0. Figure5.와 같이 $w$의 시작 지점이 $w$축의 오른쪽 가장자리인 경우
@@ -75,7 +75,7 @@ logistic regression에는 거의 모든 초기화 방법을 사용할수 있는�
 
 
 ### Case2. 미분계수 < 0 (음수)
-<p align="center"> <img src="images/Gradient3.jpg" weight=300 height=300> </p>
+<p align="center"> <img src="image/Gradient3.jpg" weight=300 height=300> </p>
 <p align="center"> Figure5. $J(w)$의 미분계수 < 0 (음수)인 경우 </p> 
 
 0. Figure6.와 같이 $w$의 시작 지점이 $w$축의 왼쪽 가장자리인 경우
@@ -85,7 +85,7 @@ logistic regression에는 거의 모든 초기화 방법을 사용할수 있는�
 4. $J(w)$를 감소시킨다. (그래프의 오른쪽 방향으로 이동)
            
            
-<p align="center"> <img src="images/경사하강법_그래프.jpg" weight=300 height=300> </p>           
+<p align="center"> <img src="image/경사하강법_그래프.jpg" weight=300 height=300> </p>           
 * 최종적으로 경사하강법은 최적의 parameter $w$에 도달한다.
 
 
